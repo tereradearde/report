@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{name}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reports_by_name.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Отчёты от пользователя: {{ name }}</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ФИО</th>
+                    <th>Отчёт(ы)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in reports %}
+                <tr>
+                    <td>{{ report.full_name }}</td>
+                    <td>{{ report.report_text }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button onclick="window.location.href='/'">Вернуться назад</button>
+    </div>
+</body>
+</html>

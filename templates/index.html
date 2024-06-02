@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Sub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Форма для отчётов</h1>
+        <form method="POST" action="/">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.full_name.label }}<br>
+                {{ form.full_name(size=32) }}<br>
+                {% for error in form.full_name.errors %}
+                    <span style="color: red;">{{ error }}</span><br>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.report_text.label }}<br>
+                {{ form.report_text(cols=50, rows=10) }}<br>
+                {% for error in form.report_text.errors %}
+                    <span style="color: red;">{{ error }}</span><br>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отправка отчёта</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Отправка отчёта</h1>
+        <form action="/submit_report" method="POST">
+            <div class="form-group">
+                <label for="employeeName">ФИО сотрудника:</label>
+                <input type="text" id="employeeName" name="employeeName" required>
+            </div>
+            <div class="form-group">
+                <label for="reportText">Отчёт:</label>
+                <textarea id="reportText" name="reportText" rows="10" required></textarea>
+            </div>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
