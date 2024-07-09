@@ -1,59 +1,98 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
     padding: 20px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
 }
 
 h1 {
     text-align: center;
-    color: #333;
-    margin-bottom: 20px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+.reports-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
-th, td {
+.report-card {
+    background-color: white;
     border: 1px solid #dddddd;
-    text-align: left;
-    padding: 12px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.2s;
 }
 
-th {
-    background-color: #4CAF50;
-    color: white;
+.report-card:hover {
+    transform: scale(1.02);
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+.report-card h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
 }
 
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
+.report-card p {
+    margin: 10px 0 0;
+    color: #555;
+}
+
+.back-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
     font-size: 16px;
     color: white;
-    background-color: #4CAF50;
-    border: none;
+    background-color: #007bff;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
 }
 
-button:hover {
-    background-color: #45a049;
+.btn
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    margin-top: 0;
+}
+
+.footer-section p {
+    margin: 5px 0;
 }

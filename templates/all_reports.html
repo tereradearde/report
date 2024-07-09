@@ -1,4 +1,8 @@
-<html lang="ru">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,26 +10,43 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/report_all.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Все отчёты</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>ФИО</th>
-                    <th>Отчёт(ы)</th>
-                </tr>
-            </thead>
-            <tbody>
+    <div class="wrapper">
+        <div class="content">
+            <h1>Все отчёты</h1>
+            <div class="reports-container">
                 {% for report in reports %}
-                <tr>
-                    <td>{{ report.full_name }}</td>
-                    <td>{{ report.report_text }}</td>
-                </tr>
+                <div class="report-card">
+                    <h3>{{ report.full_name }}</h3>
+                    <p>{{ report.report_text }}</p>
+                </div>
                 {% endfor %}
-            </tbody>
-        </table>
-        <button onclick="window.location.href='/'">Вернуться назад</button>
+            </div>
+            <div class="back-button">
+                <a href="/" class="btn">Вернуться назад</a>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Шаранов Артём</h3>
+                    <p>РИ-311120</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурсы</h3>
+                    <p>...</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>tereradearde@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Дополнительно</h3>
+                    <p>...</p>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
+
 
